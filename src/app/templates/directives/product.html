@@ -1,4 +1,26 @@
-<div>
-  {{uid}}<br/>
-  Quantity: <strong>{{quantity}}</strong>
+<div class="panel panel-default text-left">
+  <div class="panel-heading">
+    {{product.category}} / {{product.subcat}}
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-6">
+        {{product.item}}
+      </div>
+      <div class="col-md-6 text-right">
+        {{product.price}}
+      </div>
+      <div ng-if="shop === true">
+        <hr/>
+        <div ng-click="addToCart()" class="btn btn-default">Add item to cart</div>
+        <div ng-click="removeFromCart()" class="btn btn-default">Remove item from cart</div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="product.quantity" class="panel-footer">
+    <div class="row">
+      <div class="col-md-6">Quantity: {{product.quantity}}</div>
+      <div class="col-md-6 text-right">Total: {{product.quantity*product.price}}</div>
+    </div>
+  </div>
 </div>

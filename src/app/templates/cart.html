@@ -1,5 +1,9 @@
 <div class="text-center">
   <h2>List of products you have bought</h2>
   <p>{{status}}</p>
-  <div ng-repeat="item in items" >{{item}}</div>
+  <div ng-repeat="item in items" >
+    <product product-data="item"></product>
+  </div>
+  <hr/>
+  <h3 ng-if="total">Total: {{total}}£</h3>
 </div>

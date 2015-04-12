@@ -2,7 +2,14 @@
   <h1>Welcome to our shop!</h1>
   <hr/>
   <h2>List of available products</h2>
-  <ul>
-    <li ng-repeat="item in items" >{{item}}</li>
-  </ul>
+
+  <br/>
+
+  <div class="h4">Filter: <input type="text" ng-model="search"></div>
+
+  <br/>
+
+  <div ng-repeat="item in items | filter:search">
+    <product product-data="item" shop="true"></product>
+  </div>
 </div>
